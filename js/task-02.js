@@ -6,20 +6,20 @@
 // Після чого, вставить усі <li> за одну операцію у список ul#ingredients.
 
 const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
+  "Potatoes",
+  "Mushrooms",
+  "Garlic",
+  "Tomatos",
+  "Herbs",
+  "Condiments",
 ];
 
-const ingredientsList = document.querySelector('#ingredients');
+const ingredientsList = document.querySelector("#ingredients");
 
-const ingredientCreateLi = ingredientsEl=> {
-  const ingredientItem = document.createElement('li');
+const ingredientCreateLi = (ingredientsEl) => {
+  const ingredientItem = document.createElement("li");
   ingredientItem.textContent = ingredientsEl;
-  ingredientItem.classList.add('item');
+  ingredientItem.classList.add("item");
   console.log(ingredientItem);
   return ingredientItem;
 };
