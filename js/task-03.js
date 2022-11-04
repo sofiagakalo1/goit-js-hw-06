@@ -22,13 +22,14 @@ const images = [
 const galleryUl = document.querySelector(".gallery");
 const galleryLi = images
   .map(
-    (el) => `<li class = "image"><img src=${el.url} alt=${el.alt} width = 320px /></li>`
+    (el) =>
+      `<li class = "image"><img src=${el.url} alt=${el.alt} width = 320px /></li>`
   )
   .join(" ");
 
 galleryUl.insertAdjacentHTML("beforeend", galleryLi);
-galleryUl.style.listStyle = 'none';
-galleryUl.style.display = 'flex';
-galleryUl.style.flexDirecton = 'column';
-galleryUl.style.gap = '10px';
+galleryUl.style.listStyle = "none";
+galleryUl.style.display = "flex";
+galleryUl.style.flexDirecton = "column";
+galleryUl.style.gap = "10px";
 console.log(galleryUl);

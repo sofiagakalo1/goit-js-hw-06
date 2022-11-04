@@ -8,16 +8,14 @@
 const nameOutput = document.querySelector("#name-output");
 const nameInput = document.querySelector("#name-input");
 
-const onNameInput = (event)=>{
-    if(event.currentTarget.value === ''){
-        nameOutput.textContent = 'Anonymous'
-    } else {nameOutput.textContent = event.currentTarget.value;
-    }
+const onNameInput = (event) => {
+  if (event.currentTarget.value === "") {
+    nameOutput.textContent = "Anonymous";
+  } else {
+    nameOutput.textContent = event.currentTarget.value;
+  }
 };
-nameInput.addEventListener('input', onNameInput)
-
-
-
+nameInput.addEventListener("input", onNameInput);
 
 // nameInput.addEventListener("input", (event) => {
 //     nameOutput.textContent = event.currentTarget.value;

@@ -9,7 +9,7 @@ const categoreisItems = document.querySelectorAll("#categories > .item");
 
 console.log(`Number of categories: `, categoreisItems.length);
 
-categoreisItems.forEach(item => {
-    console.log(`Category: `, item.querySelector(`h2`).textContent);
-    console.log(`Elements: `, item.querySelectorAll(`li`).length)
+categoreisItems.forEach((item) => {
+  console.log(`Category: `, item.querySelector("h2").textContent);
+  console.log(`Elements: `, item.querySelectorAll("li").length);
 });
