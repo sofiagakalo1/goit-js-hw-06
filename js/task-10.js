@@ -1,3 +1,8 @@
+// Напиши скрипт створення і очищення колекції елементів.
+//  Користувач вводить кількість елементів в input і натискає кнопку Створити,
+//   після чого рендериться колекція. Натисненням на кнопку Очистити,
+//    колекція елементів очищається.
+
 /* <div id="controls">
   <input type="number" min="1" max="100" step="1" />
   <button type="button" data-create>Create</button>
@@ -20,4 +25,37 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
+const form = document.querySelector("#controls");
+const boxesEl = document.querySelector("#boxes");
+const createBtn = document.querySelector("[data-create]");
+const destroyBtn = document.querySelector("[data-destroy]");
 
+let arrayOfBoxes = [];
+let boxSize = 30;
+let numberOfBoxes = 0;
+
+const onCreateBtn = () => {
+  boxesEl.insertAdjacentHTML('beforeend', arrayOfBoxes.join(""));
+  arrayOfBoxes = [];
+};
+const onDestroyBtn = () => {
+  boxesEl.innerHTML = "";
+  boxSize = 30;
+};
+
+const formActive = (event) => {
+  numberOfBoxes = Number(event.currentTarget.value);
+  let number = 0;
+  while (number < numberOfBoxes) {
+    arrayOfBoxes.push(
+      `<div style='background-color: ${getRandomHexColor()}; height: ${boxSize}px; width: ${boxSize}px; border: 1px solid #000;'></div>`
+    );
+    console.log(arrayOfBoxes)
+    number += 1;
+    boxSize += 10;
+  }
+};
+
+createBtn.addEventListener("click", onCreateBtn);
+destroyBtn.addEventListener("click", onDestroyBtn);
+form.firstElementChild.addEventListener("blur", formActive);
