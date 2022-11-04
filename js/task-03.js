@@ -27,5 +27,8 @@ const galleryLi = images
   .join(" ");
 
 galleryUl.insertAdjacentHTML("beforeend", galleryLi);
-
+galleryUl.style.listStyle = 'none';
+galleryUl.style.display = 'flex';
+galleryUl.style.flexDirecton = 'column';
+galleryUl.style.gap = '10px';
 console.log(galleryUl);
